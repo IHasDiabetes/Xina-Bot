@@ -18,6 +18,7 @@ module.exports = {
         
           db.run("CREATE TABLE IF NOT EXISTS questions(id INTEGER PRIMARY KEY AUTOINCREMENT, questions STRING, types STRING)")
           db.run("CREATE TABLE IF NOT EXISTS choices(id INTEGER PRIMARY KEY AUTOINCREMENT, questions_id INT, choices STRING, types STRING, FOREIGN KEY (questions_id) REFERENCES questions(id))")
+          db.run("CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, server_id INTEGER, credit INTEGER DEFAULT 100)")
 
         const CLIENT_ID = client.user.id;
     

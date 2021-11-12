@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "ccp.db",
+            "group": "ccp.db",
+            "database": "${workspaceFolder:xinabot}/ccp.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
