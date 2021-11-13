@@ -19,6 +19,8 @@ module.exports = {
           db.run("CREATE TABLE IF NOT EXISTS questions(id INTEGER PRIMARY KEY AUTOINCREMENT, questions STRING, types STRING)")
           db.run("CREATE TABLE IF NOT EXISTS choices(id INTEGER PRIMARY KEY AUTOINCREMENT, questions_id INT, choices STRING, types STRING, FOREIGN KEY (questions_id) REFERENCES questions(id))")
           db.run("CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, server_id INTEGER, credit INTEGER DEFAULT 100)")
+          db.run("CREATE TABLE IF NOT EXISTS characters(id INTEGER PRIMARY KEY AUTOINCREMENT, characters STRING, ratings REAL, image_url STRING)")
+          db.run("CREATE TABLE IF NOT EXISTS collections(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, characters_id INTEGER, character_status STRING, FOREIGN KEY (user_id) REFERENCES user(id), FOREIGN KEY (characters_id) REFERENCES characters(id))")
 
         const CLIENT_ID = client.user.id;
     

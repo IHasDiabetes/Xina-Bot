@@ -32,7 +32,6 @@ module.exports = {
         let question = `SELECT * FROM questions`;
 
         const user = interaction.member.user;
-        console.log(user);
 
         const db = await open({
             filename: './ccp.db',
@@ -42,6 +41,11 @@ module.exports = {
         const guild_id = interaction.guild.id;
 
         const row = await db.all(question)
+
+        // console.log(question)
+        // console.log("===================")
+        // console.log(row);
+
         const randomed = row[Math.floor(Math.random() * row.length)]
         console.log("rolled: ", randomed.id);
 
